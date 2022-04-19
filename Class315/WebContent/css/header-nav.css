@@ -111,3 +111,11 @@ html {
 	background: #f6f8fa;
 	z-index: 10;
 }
+
+.drop_down {
+	color: black;
+}
+
+.drop_down :hover {
+	color: #645AFF;
+}

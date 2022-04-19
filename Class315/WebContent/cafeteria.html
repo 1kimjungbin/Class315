@@ -41,21 +41,107 @@
 			<div id="titleArea">
 				<h2>오늘의 급식</h2>
 				
-				<span class="Back"><a
-					href="#none" onclick="history.go(-1);" class="btnBack">뒤로가기</a>
-				</span>
+				
 			</div>
 			
 			<div id="cafeteria_section">
-				<div id="Today"></div>
+				<div id="Today" style="width: 100%; height: 30px; line-height: 30px;">
+					<a href="#none" onclick="history.go(-1);" class="btnUndo">어제 급식</a>
+					<a href="#none" onclick="history.go(-1);" class="btnNext">내일 급식</a>
+					<strong>
 					<script type="text/javascript">
 						var Today = new Date();
-						var Month = Today.getMonth;
-						var Day = Today.getDate;
-						var Day2 = Today.getDay;
-						document.getElementById("Today").innerHTML=Today;
+						if(Today.getDay() == 0) {
+							document.write(Today.getMonth() + 1 + '월 ' + Today.getDate() + '일 ' + '일요일');
+						} else if(Today.getDay() == 1) {
+							document.write(Today.getMonth() + 1 + '월 ' + Today.getDate() + '일 ' + '월요일');
+						} else if(Today.getDay() == 2) {
+							document.write(Today.getMonth() + 1 + '월 ' + Today.getDate() + '일 ' + '화요일');
+						} else if(Today.getDay() == 3) {
+							document.write(Today.getMonth() + 1 + '월 ' + Today.getDate() + '일 ' + '수요일');
+						} else if(Today.getDay() == 4) {
+							document.write(Today.getMonth() + 1 + '월 ' + Today.getDate() + '일 ' + '목요일');
+						} else if(Today.getDay() == 5) {
+							document.write(Today.getMonth() + 1 + '월 ' + Today.getDate() + '일 ' + '금요일');
+						} else if(Today.getDay() == 6) {
+							document.write(Today.getMonth() + 1 + '월 ' + Today.getDate() + '일 ' + '토요일');
+						}
 					</script>
+					</strong>
+					<ul>
+						<li>
+							<div class="timeline_box"> <span class="dot"></span> <span class="cm_bar"></span>
+							<div class="timeline_box"> <span class="dot"></span> <span class="cm_bar"></span>
+								<div class="time_normal_list">
+									<ul class="item_list">
+										<li class="item"><span class="text">차조밥</span></li>
+										<li class="item"><span class="text">된장찌개</span></li>
+										<li class="item"><span class="text">장충동왕족발</span></li>
+										<li class="item"><span class="text">실곤약비빔국수</span></li>
+										<li class="item"><span class="text">보쌈김치</span></li>
+										<li class="item"><span class="text">양파초절임</span></li>
+									</ul>
+								</div>
+							</div>
+						</li>
+
+						<!--
+						<li>
+							<div class="timeline_box"> <span class="dot"></span> <span class="cm_bar"></span> <strong class="cm_date">
+									4.20.수 점심 </strong>
+								<div class="time_normal_list">
+									<ul class="item_list">
+										<li class="item"><span class="text">카레라이스</span><span
+												class="sub_text">2.5.6.10.12.13.16.18.</span></li>
+										<li class="item"><span class="text">배추김치</span><span class="sub_text">9.</span></li>
+										<li class="item"><span class="text">애플망고라떼</span><span class="sub_text">2.</span></li>
+										<li class="item"><span class="text">오이무침</span><span class="sub_text">5.6.13.</span></li>
+										<li class="item"><span class="text">콘새우브레드</span><span class="sub_text">1.2.5.6.9.12.13.</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+
+						<li>
+							<div class="timeline_box"> <span class="dot"></span> <span class="cm_bar"></span> <strong class="cm_date">
+									4.21.목 점심 </strong>
+								<div class="time_normal_list">
+									<ul class="item_list">
+										<li class="item"><span class="text">잡곡밥</span><span class="sub_text">5.</span></li>
+										<li class="item"><span class="text">닭개장</span><span class="sub_text">5.6.12.13.15.18.</span>
+										</li>
+										<li class="item"><span class="text">부추겉절이</span><span class="sub_text">13.</span></li>
+										<li class="item"><span class="text">반달불고기육전</span><span
+												class="sub_text">1.2.4.5.6.10.12.15.16.</span></li>
+										<li class="item"><span class="text">깍두기</span><span class="sub_text">9.</span></li>
+										<li class="item"><span class="text">제리뽀:</span><span class="sub_text"></span></li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						
+						<li>
+							<div class="timeline_box"> <span class="dot"></span> <span class="cm_bar"></span> <strong class="cm_date">
+									4.22.금 점심 </strong>
+								<div class="time_normal_list">
+									<ul class="item_list">
+										<li class="item"><span class="text">크림스프</span>
+										</li>
+										<li class="item"><span class="text">찰흑미밥</span><span class="sub_text"></span></li>
+										<li class="item"><span class="text">수제왕돈까스/소스</span><span
+												class="sub_text">1.2.5.6.10.12.13.16.18.</span></li>
+										<li class="item"><span class="text">볶음김치</span><span class="sub_text">5.9.13.</span></li>
+										<li class="item"><span class="text">초코링도넛</span><span class="sub_text">1.2.5.6.</span></li>
+										<li class="item"><span class="text">양배추샐러드/참깨드레싱</span><span
+												class="sub_text">1.5.6.12.13.</span></li>
+									</ul>
+								</div>
+							</div>
+						</li>-->
+					</ul>
 				</div>
+			</div>
 		</section>
 </body>
 </html>
