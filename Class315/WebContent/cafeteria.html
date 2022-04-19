@@ -1,31 +1,31 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
-<script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
-<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-<link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
-            crossorigin="crossorigin">
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
-        <link
-            href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap"
-            rel="stylesheet">
-<script type="text/javascript">   
-	$(document).ready( function() {
-	
-	$("#header").load("layout/header.html");  // 원하는 파일 경로를 삽입하면 된다
-	$("#nav").load("layout/nav.html");  // 추가 인클루드를 원할 경우 이런식으로 추가하면 된다
-	
-	});
+	<script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap" rel="stylesheet">
+	<script type="text/javascript">
+		$(document).ready(function () {
 
+			$("#header").load("layout/header.html"); // 원하는 파일 경로를 삽입하면 된다
+			$("#nav").load("layout/nav.html"); // 추가 인클루드를 원할 경우 이런식으로 추가하면 된다
 
+			$(".item_list_04_18").hide();
+			$('.btnUndo').click(function(){
+				$(".item_list_04_18").show();
+			})
+
+		});
 	</script>
-<meta charset="UTF-8" pageEncoding="UTF-8">
-<title>Class315</title>
-<link rel="stylesheet" href="css/Nav_menu.css">
+	<meta charset="UTF-8" pageEncoding="UTF-8">
+	<title>Class315</title>
+	<link rel="stylesheet" href="css/Nav_menu.css">
 </head>
+
 <body>
 	<header>
 		<div id="header">
@@ -37,69 +37,76 @@
 
 		</div>
 	</nav>
-		<section id="section">
-			<div id="titleArea">
-				<h2>오늘의 급식</h2>
-				
-				
-			</div>
-			
-			<div id="cafeteria_section">
-				<div id="Today" style="width: 100%; height: 30px; line-height: 30px;">
-					<a href="#none" onclick="history.go(-1);" class="btnUndo">어제 급식</a>
-					<a href="#none" onclick="history.go(-1);" class="btnNext">내일 급식</a>
-					<strong>
+	<section id="section">
+		<div id="titleArea">
+			<h2>오늘의 급식</h2>
+		</div>
+		<div id="cafeteria_section">
+			<div id="Today" style="width: 100%; height: 30px; line-height: 30px;">
+				<a href="javascript:;" class="btnUndo">어제 급식</a>
+				<a href="#none" onclick="history.go(-1);" class="btnNext">내일 급식</a>
+				<strong>
 					<script type="text/javascript">
 						var Today = new Date();
-						if(Today.getDay() == 0) {
+						//document.write(yesterday.getDate());
+
+						if (Today.getDay() == 0) {
 							document.write(Today.getMonth() + 1 + '월 ' + Today.getDate() + '일 ' + '일요일');
-						} else if(Today.getDay() == 1) {
+						} else if (Today.getDay() == 1) {
 							document.write(Today.getMonth() + 1 + '월 ' + Today.getDate() + '일 ' + '월요일');
-						} else if(Today.getDay() == 2) {
+						} else if (Today.getDay() == 2) {
 							document.write(Today.getMonth() + 1 + '월 ' + Today.getDate() + '일 ' + '화요일');
-						} else if(Today.getDay() == 3) {
+						} else if (Today.getDay() == 3) {
 							document.write(Today.getMonth() + 1 + '월 ' + Today.getDate() + '일 ' + '수요일');
-						} else if(Today.getDay() == 4) {
+						} else if (Today.getDay() == 4) {
 							document.write(Today.getMonth() + 1 + '월 ' + Today.getDate() + '일 ' + '목요일');
-						} else if(Today.getDay() == 5) {
+						} else if (Today.getDay() == 5) {
 							document.write(Today.getMonth() + 1 + '월 ' + Today.getDate() + '일 ' + '금요일');
-						} else if(Today.getDay() == 6) {
+						} else if (Today.getDay() == 6) {
 							document.write(Today.getMonth() + 1 + '월 ' + Today.getDate() + '일 ' + '토요일');
 						}
 					</script>
-					</strong>
-					<ul>
-						<li>
-							<div class="timeline_box"> <span class="dot"></span> <span class="cm_bar"></span>
-							<div class="timeline_box"> <span class="dot"></span> <span class="cm_bar"></span>
-								<div class="time_normal_list">
-									<ul class="item_list">
-										<li class="item"><span class="text">차조밥</span></li>
-										<li class="item"><span class="text">된장찌개</span></li>
-										<li class="item"><span class="text">장충동왕족발</span></li>
-										<li class="item"><span class="text">실곤약비빔국수</span></li>
-										<li class="item"><span class="text">보쌈김치</span></li>
-										<li class="item"><span class="text">양파초절임</span></li>
-									</ul>
-								</div>
-							</div>
-						</li>
+				</strong>
+				
+				<ul>
+					<li>
+						<div class="time_normal_list" style="padding: 10px;">
+							<ul class="item_list_04_18">
+								<li class="item"><span class="text">닭갈비치즈볶음밥</span></li>
+								<li class="item"><span class="text">사과주스</span></li>
+								<li class="item"><span class="text">계란파국</span></li>
+								<li class="item"><span class="text">떠먹는피자</span></li>
+								<li class="item"><span class="text">콩나물무침</span></li>
+								<li class="item"><span class="text">배추김치</span></li>
+							</ul>
+						</div>
+					</li>
 
-						<!--
+					<li>
+						<div class="time_normal_list" style="padding: 10px;">
+							<ul class="item_list_04_19">
+								<li class="item"><span class="text">차조밥</span></li>
+								<li class="item"><span class="text">된장찌개</span></li>
+								<li class="item"><span class="text">장충동왕족발</span></li>
+								<li class="item"><span class="text">실곤약비빔국수</span></li>
+								<li class="item"><span class="text">보쌈김치</span></li>
+								<li class="item"><span class="text">양파초절임</span></li>
+							</ul>
+						</div>
+					</li>
+
+					<!--
 						<li>
-							<div class="timeline_box"> <span class="dot"></span> <span class="cm_bar"></span> <strong class="cm_date">
-									4.20.수 점심 </strong>
-								<div class="time_normal_list">
-									<ul class="item_list">
-										<li class="item"><span class="text">카레라이스</span><span
-												class="sub_text">2.5.6.10.12.13.16.18.</span></li>
-										<li class="item"><span class="text">배추김치</span><span class="sub_text">9.</span></li>
-										<li class="item"><span class="text">애플망고라떼</span><span class="sub_text">2.</span></li>
-										<li class="item"><span class="text">오이무침</span><span class="sub_text">5.6.13.</span></li>
-										<li class="item"><span class="text">콘새우브레드</span><span class="sub_text">1.2.5.6.9.12.13.</span>
-										</li>
-									</ul>
-								</div>
+							<div class="time_normal_list">
+								<ul class="item_list">
+									<li class="item"><span class="text">카레라이스</span><span
+											class="sub_text">2.5.6.10.12.13.16.18.</span></li>
+									<li class="item"><span class="text">배추김치</span><span class="sub_text">9.</span></li>
+									<li class="item"><span class="text">애플망고라떼</span><span class="sub_text">2.</span></li>
+									<li class="item"><span class="text">오이무침</span><span class="sub_text">5.6.13.</span></li>
+									<li class="item"><span class="text">콘새우브레드</span><span class="sub_text">1.2.5.6.9.12.13.</span>
+									</li>
+								</ul>
 							</div>
 						</li>
 
@@ -120,7 +127,7 @@
 								</div>
 							</div>
 						</li>
-						
+
 						<li>
 							<div class="timeline_box"> <span class="dot"></span> <span class="cm_bar"></span> <strong class="cm_date">
 									4.22.금 점심 </strong>
@@ -139,9 +146,10 @@
 								</div>
 							</div>
 						</li>-->
-					</ul>
-				</div>
+				</ul>
 			</div>
-		</section>
+		</div>
+	</section>
 </body>
+
 </html>
