@@ -29,6 +29,7 @@
                 margin: 0;
                 padding: 0;
                 box-sizing: border-box;
+                background-color: white;
             }
             li,
             ul {
@@ -117,6 +118,128 @@
                 transform: translateX(-200%);
                 animation: slide03 20s infinite;
             }
+            [id="slide04"]:checked ~ .slidelist .slideitem {
+                transform: translateX(-300%);
+                animation: slide03 20s infinite;
+            }
+
+            @keyframes slide01 {
+                0% {
+                    left: 0;
+                }
+                23% {
+                    left: 0;
+                }
+                25% {
+                    left: -100%;
+                }
+                48% {
+                    left: -100%;
+                }
+                50% {
+                    left: -200%;
+                }
+                73% {
+                    left: -200%;
+                }
+                75% {
+                    left: -300%;
+                }
+                98% {
+                    left: -300%;
+                }
+                100% {
+                    left: 0;
+                }
+            }
+            @keyframes slide02 {
+                0% {
+                    left: 0;
+                }
+                23% {
+                    left: 0;
+                }
+                25% {
+                    left: -100%;
+                }
+                48% {
+                    left: -100%;
+                }
+                50% {
+                    left: -200%;
+                }
+                73% {
+                    left: -200%;
+                }
+                75% {
+                    left: 100%;
+                }
+                98% {
+                    left: 100%;
+                }
+                100% {
+                    left: 0;
+                }
+            }
+            @keyframes slide03 {
+                0% {
+                    left: 0;
+                }
+                23% {
+                    left: 0;
+                }
+                25% {
+                    left: -100%;
+                }
+                48% {
+                    left: -100%;
+                }
+                50% {
+                    left: 200%;
+                }
+                73% {
+                    left: 200%;
+                }
+                75% {
+                    left: 100%;
+                }
+                98% {
+                    left: 100%;
+                }
+                100% {
+                    left: 0;
+                }
+            }
+
+            @keyframes slide04 {
+                0% {
+                    left: 0;
+                }
+                23% {
+                    left: 0;
+                }
+                25% {
+                    left: -100%;
+                }
+                48% {
+                    left: -100%;
+                }
+                50% {
+                    left: 200%;
+                }
+                73% {
+                    left: 200%;
+                }
+                75% {
+                    left: 100%;
+                }
+                98% {
+                    left: 100%;
+                }
+                100% {
+                    left: 0;
+                }
+            }
         </style>
         <title>0925</title>
     </head>
@@ -139,7 +262,7 @@
                 <ul class="slidelist">
                     <li class="slideitem">
                         <div>
-                            <label for="slide04" class="left"></label>
+                            <label for="slide03" class="left"></label>
                             <label for="slide02" class="right"></label>
                             <a href="product/outerwear/test.html"><img src="./img/4월 급식.png"></a>
                         </div>
@@ -162,7 +285,7 @@
                         <div>
                             <label for="slide03" class="left"></label>
                             <label for="slide01" class="right"></label>
-                            <a><img src="./img/image4.jpg"></a>
+                            <a><img src="./img/image3.jpg"></a>
                         </div>
                     </li>
                 </ul>

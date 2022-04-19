@@ -9,6 +9,10 @@ body {
 	border-width: 0 1px;
 	box-sizing: border-box;
 	z-index: 6;
+	max-width: 900px;
+	min-height: 100%;
+	margin: 0 auto;
+	background-color: white;
 }
 
 ul, li {
@@ -26,20 +30,6 @@ a {
 	color: black
 }
 
-html {
-	width: 100%;
-	height: 1500px;
-	background: #f6f8fa;
-	overflow-y: scroll;
-	z-index: 10;
-}
-
-body {
-	max-width: 900px;
-	min-height: 100%;
-	margin: 0 auto;
-	background: #fff;
-}
 
 #header {
 	background-color: white;
@@ -65,7 +55,6 @@ body {
 	color: black;
 	background-color: white;
 	padding: 0 10px;
-	width: 100%;
 	font-size: 15px;
 	font-weight: bold;
 }
@@ -116,48 +105,9 @@ body {
 	float: left;
 }
 
-
-
-
-.btnBasket > a {
-    -webkit-text-size-adjust: none;
-    text-decoration: none;
-    position: relative;
-    width: 30px;
-    height: 30px;
-	top: 18px;
-	left: 379px;
-    background-repeat: no-repeat;
-    background-size: 30px 30px;
-    display: inline-block;
-    overflow: hidden;
-    font-size: 1px;
-    line-height: 0;
-    color: transparent;
-    background-image: url('//img.echosting.cafe24.com/skin/dnd_ko_KR/common/layout/btn_basket.png');
-}
-
-
-
-.btnMy {
--webkit-text-size-adjust: none;
-text-align: center;
-text-decoration: none;
-position: relative;
-width: 30px;
-height: 30px;
-top: 18px;
-background-repeat: no-repeat;
-background-size: 30px 30px;
-display: inline-block;
-overflow: hidden;
-font-size: 1px;
-line-height: 0;
-color: transparent;
-float: right;
-background-image: url('//img.echosting.cafe24.com/skin/dnd_ko_KR/common/layout/btn_my.png');
-margin-right: 10px;
-}
-
-.headerMenu_gRight {
+html {
+	width: 100%;
+	height: 1300px;
+	background: #f6f8fa;
+	z-index: 10;
 }

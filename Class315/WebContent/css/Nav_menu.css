@@ -6,7 +6,7 @@ b {
 #titleArea {
     overflow: hidden;
     position: relative;
-    border-top: 1px solid #e6e6e6;
+    border-top: 1px solid hsl(0, 0%, 90%);
     top: 20px;
 }
 
@@ -72,4 +72,31 @@ a:-webkit-any-link {
 
 #titleArea h2 {
     font-family: 'Pretendard-Light';
+}
+
+
+
+html {
+    height: 300px;
+}
+
+#cafeteria_section {
+    width: 100%;
+    height: 400px;
+    font-family: 'Pretendard-Light';
+    font-size: 14px;
+    text-align: center;
+    position: relative;
+    top: 35px;
+}
+
+#cafeteria_section .btnUndo {
+    overflow: hidden;
+    width: 50px;
+    height: 20px;
+    font-size: 1px;
+    line-height: 0;
+    color: transparent;
+    background: url(https://moma-img.echosting.cafe24.com/img/1/ba88/btn_title_back.png) no-repeat 0 0;
+    background-size: 20px auto;
 }

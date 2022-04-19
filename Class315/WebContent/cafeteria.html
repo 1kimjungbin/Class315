@@ -19,10 +19,12 @@
 	$("#nav").load("layout/nav.html");  // 추가 인클루드를 원할 경우 이런식으로 추가하면 된다
 	
 	});
+
+
 	</script>
 <meta charset="UTF-8" pageEncoding="UTF-8">
 <title>Class315</title>
-<link rel="stylesheet" href="css/All.css">
+<link rel="stylesheet" href="css/Nav_menu.css">
 </head>
 <body>
 	<header>
@@ -36,14 +38,24 @@
 		</div>
 	</nav>
 		<section id="section">
-			<div id="titleArea"
-				class="xans-element- xans-product xans-product-headcategory ">
-				<h2>All</h2>
-				<p class="banner"></p>
-				<span class="xans-element- xans-layout xans-layout-mobileaction "><a
-					href="#none" onclick="history.go(-1);return false;" class="btnBack">뒤로가기</a>
+			<div id="titleArea">
+				<h2>오늘의 급식</h2>
+				
+				<span class="Back"><a
+					href="#none" onclick="history.go(-1);" class="btnBack">뒤로가기</a>
 				</span>
 			</div>
+			
+			<div id="cafeteria_section">
+				<div id="Today"></div>
+					<script type="text/javascript">
+						var Today = new Date();
+						var Month = Today.getMonth;
+						var Day = Today.getDate;
+						var Day2 = Today.getDay;
+						document.getElementById("Today").innerHTML=Today;
+					</script>
+				</div>
 		</section>
 </body>
 </html>
