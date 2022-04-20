@@ -8,17 +8,107 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap" rel="stylesheet">
+
+
 	<script type="text/javascript">
 		$(document).ready(function () {
+			var Today = new Date();
+			var yesterday = $(Today.getDay - 1);
 
 			$("#header").load("layout/header.html"); // 원하는 파일 경로를 삽입하면 된다
 			$("#nav").load("layout/nav.html"); // 추가 인클루드를 원할 경우 이런식으로 추가하면 된다
 
+			//넷째 주
 			$(".item_list_04_18").hide();
-			$('.btnUndo').click(function(){
-				$(".item_list_04_18").show();
-			})
+			$(".item_list_04_19").hide();
+			$(".item_list_04_20").hide();
+			$(".item_list_04_21").hide();
+			$(".item_list_04_22").hide();
 
+			if(Today.getDate() == 18) {
+				$(".item_list_04_18").show();
+			} else if(Today.getDate() == 19) {
+				$(".item_list_04_19").show();
+			} else if(Today.getDate() == 20) {
+				$(".item_list_04_20").show();
+			} else if(Today.getDate() == 21) {
+				$(".item_list_04_21").show();
+			} else if(Today.getDate() == 22) {
+				$(".item_list_04_22").show();
+			} 
+
+			$(function DateBtn(){
+					$('.Date').click(function(){
+						if(Today.getDay() == 0) {
+						$('.Date').text(Today.getMonth() + 1 + '월 ' + Today.getDate() + '일 ' + '일요일');
+					} else if(Today.getDay() == 1) {
+						$('.Date').text(Today.getMonth() + 1 + '월 ' + Today.getDate() + '일 ' + '월요일');
+						$(".item_list_04_18").show();
+						$(".item_list_04_19").hide();
+						$(".item_list_04_20").show();
+						$(".item_list_04_21").hide();
+						$(".item_list_04_22").hide();
+						$('.btnUndo').show();
+						$('.btnNext').show();
+					} else if(Today.getDay() == 2) {
+						$('.Date').text(Today.getMonth() + 1 + '월 ' + Today.getDate() + '일 ' + '화요일');
+						$(".item_list_04_18").hide();
+						$(".item_list_04_19").show();
+						$(".item_list_04_20").hide();
+						$(".item_list_04_21").hide();
+						$(".item_list_04_22").hide();
+						$('.btnUndo').show();
+						$('.btnNext').show();
+					} else if(Today.getDay() == 3) {
+						$('.Date').text(Today.getMonth() + 1 + '월 ' + Today.getDate() + '일 ' + '수요일');
+						$(".item_list_04_18").hide();
+						$(".item_list_04_19").hide();
+						$(".item_list_04_20").show();
+						$(".item_list_04_21").hide();
+						$(".item_list_04_22").hide();
+						$('.btnUndo').show();
+						$('.btnNext').show();
+					} else if(Today.getDay() == 4) {
+						$('.Date').text(Today.getMonth() + 1 + '월 ' + Today.getDate() + '일 ' + '목요일');
+						$(".item_list_04_18").hide();
+						$(".item_list_04_19").hide();
+						$(".item_list_04_20").hide();
+						$(".item_list_04_21").show();
+						$(".item_list_04_22").hide();
+						$('.btnUndo').show();
+						$('.btnNext').show();
+					} else if(Today.getDay() == 5) {
+						$('.Date').text(Today.getMonth() + 1 + '월 ' + Today.getDate() + '일 ' + '금요일');
+						$(".item_list_04_18").hide();
+						$(".item_list_04_19").hide();
+						$(".item_list_04_20").hide();
+						$(".item_list_04_21").hide();
+						$(".item_list_04_22").show();
+						$('.btnUndo').show();
+						$('.btnNext').show();
+					} else if(Today.getDay() == 6) {
+						$('.Date').text(Today.getMonth() + 1 + '월 ' + Today.getDate() + '일 ' + '토요일');
+					}
+					});
+			});
+
+			$('.btnUndo').click(function(){
+				if(Today.getDate() == 20 ) {
+					$('.Date').text(Today.getMonth() + 1 + '월 ' + (Today.getDate() - 1) + '일 ' + '화요일');
+					$('.item_list_04_19').show();
+					$('.item_list_04_20').hide();
+					$('.btnUndo').hide();
+				}
+			});
+
+			$('.btnNext').click(function(){
+				if(Today.getDate() == 20 ) {
+					$('.Date').text(Today.getMonth() + 1 + '월 ' + (Today.getDate() + 1) + '일 ' + '목요일');
+					$('.item_list_04_20').hide();
+					$('.item_list_04_21').show();
+					$('.btnNext').hide();
+				}
+			});
 		});
 	</script>
 	<meta charset="UTF-8" pageEncoding="UTF-8">
@@ -43,12 +133,14 @@
 		</div>
 		<div id="cafeteria_section">
 			<div id="Today" style="width: 100%; height: 30px; line-height: 30px;">
-				<a href="javascript:;" class="btnUndo">어제 급식</a>
-				<a href="#none" onclick="history.go(-1);" class="btnNext">내일 급식</a>
-				<strong>
+				<div id="btn">
+					<a href="javascript:;" class="btnUndo">어제 급식</a>
+					<a href="javascript:;" class="btnNext">내일 급식</a>
+				</div>
+				<strong class="Date">
+					<p><a href="javascript:DateBtn">
 					<script type="text/javascript">
 						var Today = new Date();
-						//document.write(yesterday.getDate());
 
 						if (Today.getDay() == 0) {
 							document.write(Today.getMonth() + 1 + '월 ' + Today.getDate() + '일 ' + '일요일');
@@ -66,11 +158,13 @@
 							document.write(Today.getMonth() + 1 + '월 ' + Today.getDate() + '일 ' + '토요일');
 						}
 					</script>
+					</a>
+					</p>
 				</strong>
-				
+
 				<ul>
 					<li>
-						<div class="time_normal_list" style="padding: 10px;">
+						<div class="time_normal_list">
 							<ul class="item_list_04_18">
 								<li class="item"><span class="text">닭갈비치즈볶음밥</span></li>
 								<li class="item"><span class="text">사과주스</span></li>
@@ -83,7 +177,7 @@
 					</li>
 
 					<li>
-						<div class="time_normal_list" style="padding: 10px;">
+						<div class="time_normal_list">
 							<ul class="item_list_04_19">
 								<li class="item"><span class="text">차조밥</span></li>
 								<li class="item"><span class="text">된장찌개</span></li>
@@ -95,59 +189,52 @@
 						</div>
 					</li>
 
-					<!--
-						<li>
-							<div class="time_normal_list">
-								<ul class="item_list">
-									<li class="item"><span class="text">카레라이스</span><span
-											class="sub_text">2.5.6.10.12.13.16.18.</span></li>
-									<li class="item"><span class="text">배추김치</span><span class="sub_text">9.</span></li>
-									<li class="item"><span class="text">애플망고라떼</span><span class="sub_text">2.</span></li>
-									<li class="item"><span class="text">오이무침</span><span class="sub_text">5.6.13.</span></li>
-									<li class="item"><span class="text">콘새우브레드</span><span class="sub_text">1.2.5.6.9.12.13.</span>
-									</li>
-								</ul>
-							</div>
-						</li>
+					<li>
+						<div class="time_normal_list">
+							<ul class="item_list_04_20">
+								<li class="item"><span class="text">카레라이스</span></li>
+								<li class="item"><span class="text">배추김치</span></li>
+								<li class="item"><span class="text">애플망고라떼</span></li>
+								<li class="item"><span class="text">오이무침</span>
+								</li>
+								<li class="item"><span class="text">콘새우브레드</span>
+								</li>
+							</ul>
+						</div>
+					</li>
 
-						<li>
-							<div class="timeline_box"> <span class="dot"></span> <span class="cm_bar"></span> <strong class="cm_date">
-									4.21.목 점심 </strong>
-								<div class="time_normal_list">
-									<ul class="item_list">
-										<li class="item"><span class="text">잡곡밥</span><span class="sub_text">5.</span></li>
-										<li class="item"><span class="text">닭개장</span><span class="sub_text">5.6.12.13.15.18.</span>
-										</li>
-										<li class="item"><span class="text">부추겉절이</span><span class="sub_text">13.</span></li>
-										<li class="item"><span class="text">반달불고기육전</span><span
-												class="sub_text">1.2.4.5.6.10.12.15.16.</span></li>
-										<li class="item"><span class="text">깍두기</span><span class="sub_text">9.</span></li>
-										<li class="item"><span class="text">제리뽀:</span><span class="sub_text"></span></li>
-									</ul>
-								</div>
-							</div>
-						</li>
+					<li>
+						<div class="time_normal_list">
+							<ul class="item_list_04_21">
+								<li class="item"><span class="text">잡곡밥</span></li>
+								<li class="item"><span class="text">닭개장</span>
+								</li>
+								<li class="item"><span class="text">부추겉절이</span></li>
+								<li class="item"><span class="text">반달불고기육전</span></li>
+								<li class="item"><span class="text">깍두기</span></li>
+								<li class="item"><span class="text">제리뽀</span></li>
+							</ul>
+						</div>
 
-						<li>
-							<div class="timeline_box"> <span class="dot"></span> <span class="cm_bar"></span> <strong class="cm_date">
-									4.22.금 점심 </strong>
-								<div class="time_normal_list">
-									<ul class="item_list">
-										<li class="item"><span class="text">크림스프</span>
-										</li>
-										<li class="item"><span class="text">찰흑미밥</span><span class="sub_text"></span></li>
-										<li class="item"><span class="text">수제왕돈까스/소스</span><span
-												class="sub_text">1.2.5.6.10.12.13.16.18.</span></li>
-										<li class="item"><span class="text">볶음김치</span><span class="sub_text">5.9.13.</span></li>
-										<li class="item"><span class="text">초코링도넛</span><span class="sub_text">1.2.5.6.</span></li>
-										<li class="item"><span class="text">양배추샐러드/참깨드레싱</span><span
-												class="sub_text">1.5.6.12.13.</span></li>
-									</ul>
-								</div>
-							</div>
-						</li>-->
-				</ul>
+					</li>
+					<li>
+						<div class="time_normal_list">
+							<ul class="item_list_04_22">
+								<li class="item"><span class="text">크림스프</span>
+								</li>
+								<li class="item"><span class="text">찰흑미밥</span><span class="sub_text"></span></li>
+								<li class="item"><span class="text">수제왕돈까스/소스</span></li>
+								<li class="item"><span class="text">볶음김치</span>
+								</li>
+								<li class="item"><span class="text">초코링도넛</span>
+								</li>
+								<li class="item"><span class="text">양배추샐러드/참깨드레싱</span></li>
+							</ul>
+						</div>
 			</div>
+			</li>
+			</ul>
+		</div>
 		</div>
 	</section>
 </body>

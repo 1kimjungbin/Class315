@@ -22,6 +22,80 @@
 
 
 	</script>
+	<style>
+		
+		li,
+		ul {
+			list-style: none;
+		}
+
+		[name="slide"] {
+			display: none;
+		}
+		.slidebox {
+			max-width: 300px;
+			width: 100%;
+			margin: 0 auto;
+			text-align: center;
+		}
+		.slidebox .slidelist {
+			white-space: nowrap;
+			font-size: 16px;
+			
+		}
+		.slidebox .slideitem {
+			position: relative;
+			display: inline-block;
+			vertical-align: middle;
+			width: 100%;
+			transition: all 0.35s;
+		}
+		.slidebox .slideitem label {
+			position: absolute;
+			z-index: 1;
+			top: 50px;
+			transform: translateY(-50%);
+			padding: 20px;
+			border-radius: 50%;
+			cursor: pointer;
+		}
+		label.left {
+			left: 20px;
+			background-image: url(https://cdn-icons-png.flaticon.com/512/6367/6367836.png);
+			background-position: center center;
+			background-size: 50%;
+			background-repeat: no-repeat;
+		}
+		label.right {
+			right: 20px;
+			background-image: url(https://cdn-icons-png.flaticon.com/512/6367/6367846.png);
+			background-position: center center;
+			background-size: 50%;
+			background-repeat: no-repeat;
+		}
+
+		[id="slide01"]:checked ~ .slidelist .slideitem {
+			transform: translateX(0);
+			animation: slide01 20s infinite;
+		}
+		[id="slide02"]:checked ~ .slidelist .slideitem {
+			transform: translateX(-100%);
+			animation: slide02 20s infinite;
+		}
+		[id="slide03"]:checked ~ .slidelist .slideitem {
+			transform: translateX(-200%);
+			animation: slide03 20s infinite;
+		}
+		[id="slide04"]:checked ~ .slidelist .slideitem {
+			transform: translateX(-300%);
+			animation: slide04 20s infinite;
+		}
+
+		.Date {
+			position: relative;
+			top: 37px;
+		}
+		</style>
 <meta charset="UTF-8" pageEncoding="UTF-8">
 <title>Class315</title>
 <link rel="stylesheet" href="css/Nav_menu.css">
@@ -37,11 +111,41 @@
 
 		</div>
 	</nav>
-		<section id="section">
+		<section id="section" style="width: 100%; height: 500px;">
 			<div id="titleArea">
 				<h2>sample</h2>
 			</div>
-			
+			<div class="slidebox">
+                <input type="radio" name="slide" id="slide01">
+                <input type="radio" name="slide" id="slide02"  checked="checked">
+                <input type="radio" name="slide" id="slide03">
+                <ul class="slidelist">
+                    <li class="slideitem">
+                        <div>
+                            <label class="left"></label>
+                            <label for="slide02" class="right"></label>
+                            <a class="Date">0419</a>
+                        </div>
+                    </li>
+                    <li class="slideitem">
+                        <div>
+                            <label for="slide01" class="left"></label>
+                            <label for="slide03" class="right"></label>
+                            <a class="Date"><script type="text/javascript">
+								var Today = new Date();
+								document.write(Today.getMonth() + 1 + '월 ' + Today.getDate() + '일 ' + '일요일');
+							</script></a>
+                        </div>
+                    </li>
+                    <li class="slideitem">
+                        <div>
+                            <label for="slide02" class="left"></label>
+                            <label class="right"></label>
+                            <a class="Date">0421</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
 		</section>
 </body>
 </html>
