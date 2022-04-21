@@ -19,11 +19,11 @@
 			$("#nav").load("layout/nav.html"); // 추가 인클루드를 원할 경우 이런식으로 추가하면 된다
 
 			//넷째 주
-			$(".item_list_04_18").hide();
-			$(".item_list_04_19").hide();
-			$(".item_list_04_20").hide();
-			$(".item_list_04_21").hide();
-			$(".item_list_04_22").hide();
+				$(".item_list_04_18").hide();
+				$(".item_list_04_19").hide();
+				$(".item_list_04_20").hide();
+				$(".item_list_04_21").hide();
+				$(".item_list_04_22").hide();
 
 			if(Today.getDate() == 18) {
 				$(".item_list_04_18").show();
@@ -141,7 +141,6 @@
 					<p><a href="javascript:DateBtn">
 					<script type="text/javascript">
 						var Today = new Date();
-
 						if (Today.getDay() == 0) {
 							document.write(Today.getMonth() + 1 + '월 ' + Today.getDate() + '일 ' + '일요일');
 						} else if (Today.getDay() == 1) {
