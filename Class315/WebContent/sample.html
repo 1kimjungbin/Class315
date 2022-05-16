@@ -14,15 +14,25 @@
 			$("#header").load("layout/header.html"); // 원하는 파일 경로를 삽입하면 된다
 			$("#nav").load("layout/nav.html"); // 추가 인클루드를 원할 경우 이런식으로 추가하면 된다
 
-			$(".item_list_04_18").hide();
-			$(".item_list_04_19").hide();
-			$(".item_list_04_20").hide();
-			$(".item_list_04_21").hide();
-			$(".item_list_04_22").hide();
+			$(".item_list_05_16").hide();
+			$(".item_list_05_17").hide();
+			$(".item_list_05_18").hide();
+			$(".item_list_05_19").hide();
+			$(".item_list_05_20").hide();
 
 			var Today = new Date();
-			if (Today.getDate() == 21) {
-				$(".item_list_04_21").show();
+
+			//셋째주
+			if (Today.getDate() == 16) {
+				$(".item_list_05_16").show();
+			} else if (Today.getDate() == 17) {
+				$(".item_list_05_17").show();
+			} else if (Today.getDate() == 18) {
+				$(".item_list_05_18").show();
+			} else if (Today.getDate() == 19) {
+				$(".item_list_05_19").show();
+			} else if (Today.getDate() == 20) {
+				$(".item_list_05_20").show();
 			}
 
 		});
@@ -46,6 +56,7 @@
 			width: 100%;
 			margin: 0 auto;
 			text-align: center;
+			height: 100px;
 		}
 
 		.slidebox img {
@@ -142,6 +153,10 @@
 			position: relative;
 			top: 40px;
 		}
+
+		.time_normal_list {
+			text-align: center;
+		}
 	</style>
 	<meta charset="UTF-8" pageEncoding="UTF-8">
 	<title>Class315</title>
@@ -219,8 +234,8 @@
 									document.write(Today.getMonth() + 1 + '월 ' + Today.getDate() + '일 ' + '토요일');
 								}
 
-								if (Today.getDate() == 18) {
-									$(".item_list_04_18").show();
+								if (Today.getDate() == 16) {
+									$(".item_list_05_16").show();
 								}
 							</script>
 						</a>
@@ -267,70 +282,70 @@
 		<ul>
 			<li>
 				<div class="time_normal_list">
-					<ul class="item_list_04_18">
-						<li class="item"><span class="text">닭갈비치즈볶음밥</span></li>
-						<li class="item"><span class="text">사과주스</span></li>
-						<li class="item"><span class="text">계란파국</span></li>
-						<li class="item"><span class="text">떠먹는피자</span></li>
-						<li class="item"><span class="text">콩나물무침</span></li>
-						<li class="item"><span class="text">배추김치</span></li>
+					<ul class="item_list_05_16">
+						<li class="item"><span class="text">찰옥수수밥</span></li>
+						<li class="item"><span class="text">짜글이찌개</span></li>
+						<li class="item"><span class="text">메추리알장</span></li>
+						<li class="item"><span class="text">고구마닭불구이</span></li>
+						<li class="item"><span class="text">열무김치</span></li>
+						<li class="item"><span class="text">김자반</span></li>
 					</ul>
 				</div>
 			</li>
 
 			<li>
 				<div class="time_normal_list">
-					<ul class="item_list_04_19">
-						<li class="item"><span class="text">차조밥</span></li>
-						<li class="item"><span class="text">된장찌개</span></li>
-						<li class="item"><span class="text">장충동왕족발</span></li>
-						<li class="item"><span class="text">실곤약비빔국수</span></li>
-						<li class="item"><span class="text">보쌈김치</span></li>
-						<li class="item"><span class="text">양파초절임</span></li>
-					</ul>
-				</div>
-			</li>
-
-			<li>
-				<div class="time_normal_list">
-					<ul class="item_list_04_20">
-						<li class="item"><span class="text">카레라이스</span></li>
-						<li class="item"><span class="text">배추김치</span></li>
-						<li class="item"><span class="text">애플망고라떼</span></li>
-						<li class="item"><span class="text">오이무침</span>
-						</li>
-						<li class="item"><span class="text">콘새우브레드</span>
-						</li>
-					</ul>
-				</div>
-			</li>
-
-			<li>
-				<div class="time_normal_list">
-					<ul class="item_list_04_21">
-						<li class="item"><span class="text">잡곡밥</span></li>
-						<li class="item"><span class="text">닭개장</span>
-						</li>
-						<li class="item"><span class="text">부추겉절이</span></li>
-						<li class="item"><span class="text">반달불고기육전</span></li>
+					<ul class="item_list_05_17">
+						<li class="item"><span class="text">찰흑미밥</span></li>
+						<li class="item"><span class="text">파개장</span></li>
+						<li class="item"><span class="text">두부양념조림</span></li>
 						<li class="item"><span class="text">깍두기</span></li>
-						<li class="item"><span class="text">제리뽀</span></li>
+						<li class="item"><span class="text">조각파인애플</span></li>
+						<li class="item"><span class="text">갈비후라이드튀김/어니언소스</span></li>
+					</ul>
+				</div>
+			</li>
+
+			<li>
+				<div class="time_normal_list">
+					<ul class="item_list_05_18">
+						<li class="item"><span class="text">낙지야채비빔밥</span></li>
+						<li class="item"><span class="text">구운몬테크리스토</span></li>
+						<li class="item"><span class="text">배추김치</span></li>
+						<li class="item"><span class="text">콩나물무침</span>
+						</li>
+						<li class="item"><span class="text">복숭아에이드</span>
+						</li>
+					</ul>
+				</div>
+			</li>
+
+			<li>
+				<div class="time_normal_list">
+					<ul class="item_list_05_19">
+						<li class="item"><span class="text">칼슘찹쌀밥</span></li>
+						<li class="item"><span class="text">돈코츠라면</span>
+						</li>
+						<li class="item"><span class="text">타코야끼</span></li>
+						<li class="item"><span class="text">배추김치</span></li>
+						<li class="item"><span class="text">피크닉</span></li>
+						<li class="item"><span class="text">양상추샐러드/흑임자드레싱</span></li>
 					</ul>
 				</div>
 
 			</li>
 			<li>
 				<div class="time_normal_list">
-					<ul class="item_list_04_22">
-						<li class="item"><span class="text">크림스프</span>
+					<ul class="item_list_05_20">
+						<li class="item"><span class="text">밥버거</span>
 						</li>
-						<li class="item"><span class="text">찰흑미밥</span><span class="sub_text"></span></li>
-						<li class="item"><span class="text">수제왕돈까스/소스</span></li>
-						<li class="item"><span class="text">볶음김치</span>
+						<li class="item"><span class="text">깍두기</span></li>
+						<li class="item"><span class="text">양념바삭치킨꼬치</span></li>
+						<li class="item"><span class="text">유부장국</span>
 						</li>
-						<li class="item"><span class="text">초코링도넛</span>
+						<li class="item"><span class="text">사과&푸룬주스</span>
 						</li>
-						<li class="item"><span class="text">양배추샐러드/참깨드레싱</span></li>
+						<li class="item"><span class="text">오이지무침</span></li>
 					</ul>
 				</div>
 				</div>
